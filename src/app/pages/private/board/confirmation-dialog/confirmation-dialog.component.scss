@@ -1,0 +1,102 @@
+@import '../../../../../assets/sass/_mixins';
+
+:host {
+    width: 100%;
+    min-height: 21.52vw;
+    height: auto;
+    border-radius: 5px;
+}
+
+.modal-form {
+    @include display-flex;
+    justify-content: flex-start;
+
+    .two-columns {
+        padding: 6.82% 2.43% 8.29%;
+        position: relative;
+        width: 100%;
+        text-align: center;
+
+        &.diff-color {
+            background: #F5F7FB;
+            position: relative;
+        }
+
+        .modal-close-cta {
+            position: absolute;
+            right: 15px;
+            top: 14px;
+            color: #616161;
+            font-style: italic;
+            font-size: 0.750em;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+
+            .icon {
+                font-size: 1.667em;
+                font-style: normal;
+                font-weight: bold;
+                padding-left: 10px;
+                &:before {
+                    margin-right: 0;
+                    font-size: 1em;
+                }
+            }
+        }
+
+        .message-section {
+            font-size: 1em;
+            color: #616161;
+            line-height: 1.625em;
+            .message-subtitle {
+                display: block;
+                font-weight: bold;
+            }
+        }
+
+        .message-alert {
+            border-bottom: 1px solid #EDEDED;
+            border-top: 1px solid #EDEDED;
+            color: #ff003b;
+            font-size: 0.938em;
+            margin: 2vh 0;
+            padding: 15px 65px;
+            line-height: 1.2em;
+        }
+
+        .confirmation-img {
+            width: 5.05vw;
+            height: 5.05vw;
+            border: 1px solid #19D600;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto;
+            &.alert {
+                border: 1px solid #FF003B;
+                .icon {
+                    color: #FF003B;
+                }
+            }
+            .icon {
+                color: #19D600;
+                &:before {
+                    font-size: 2.625em;
+                    margin-right: 0;
+                }
+            }
+        }
+
+    }
+    .footer {
+        margin-top: 3.9vh;
+    }
+    &__separator {
+        height: 1px;
+        background-color: #EDEDED;
+        margin: 3.25vh 0;
+        border: 0;
+    }
+}

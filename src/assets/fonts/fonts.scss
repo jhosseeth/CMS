@@ -1,0 +1,224 @@
+@include font-face("Helvetica Neue", "/assets/fonts/HelveticaNeue/HelveticaNeue", regular, normal);
+
+@font-face {
+	font-family: 'icomoon';
+	src:  url('/assets/fonts/icomoon/icomoon.eot?aed956');
+	src:  url('/assets/fonts/icomoon/icomoon.eot?aed956#iefix') format('embedded-opentype'),
+		url('/assets/fonts/icomoon/icomoon.ttf?aed956') format('truetype'),
+		url('/assets/fonts/icomoon/icomoon.woff?aed956') format('woff'),
+		url('/assets/fonts/icomoon/icomoon.svg?aed956#icomoon') format('svg');
+	font-weight: normal;
+	font-style: normal;
+	font-display: block;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+	/* use !important to prevent issues with browser extensions that change fonts */
+	/*font-family: 'icomoon' !important;*/
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.icon:before, .icon .mat-button-wrapper:before{
+	font-family: 'icomoon';
+	font-size: 1.250em;
+	margin-right: 7px;
+}
+
+@font-face {
+    font-family: 'Glyphter';
+    src: url('/assets/fonts/glyphter/Glyphter.eot');
+    src: url('/assets/fonts/glyphter/Glyphter.eot?#iefix') format('embedded-opentype'),
+         url('/assets/fonts/glyphter/Glyphter.woff') format('woff'),
+         url('/assets/fonts/glyphter/Glyphter.ttf') format('truetype'),
+         url('/assets/fonts/glyphter/Glyphter.svg#Glyphter') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+[class*='icong-']:before{
+	display: inline-block;
+   font-family: 'Glyphter';
+   font-style: normal;
+   font-weight: normal;
+   line-height: 1;
+   margin-right: 3px;
+   -webkit-font-smoothing: antialiased;
+   -moz-osx-font-smoothing: grayscale
+}
+
+.icong-upload:before{content:'\0041';}
+.icong-camera:before{content:'\0042';}
+.icong-file-alt:before{content:'\0043';}
+.icong-images:before{content:'\0044';}
+.icong-share:before{content:'\0045';}
+.icong-reply:before{content:'\0046';}
+.icong-check-circle:before{content:'\0047';}
+.icong-times-circle:before{content:'\0048';}
+.icong-crown:before{content:'\0049';}
+.icong-clipboard-check:before{content:'\004a';}
+.icong-comment-medical:before{content:'\004b';}
+.icong-comments:before{content:'\004c';}
+
+
+
+.icon-times:before {
+	content: "\e925";
+}
+
+.icon-ellipsis-h:before {
+	content: "\e924";
+}
+
+.icon-bell:before {
+	content: "\e900";
+}
+
+.icon-book-open:before {
+	content: "\e901";
+}
+
+.icon-calendar:before {
+	content: "\e902";
+}
+
+.icon-chart-pie:before {
+	content: "\e903";
+}
+
+.icon-check-circle:before {
+	content: "\e904";
+}
+
+.icon-check-double:before {
+	content: "\e905";
+}
+
+.icon-check:before {
+	content: "\e906";
+}
+
+.icon-clipboard-check:before {
+	content: "\e907";
+}
+
+.icon-cog:before,
+.con-cog span:before {
+	content: "\e908";
+}
+
+.icon-columns:before {
+	content: "\e909";
+}
+
+.icon-copy:before {
+	content: "\e90a";
+}
+
+.icon-edit:before {
+	content: "\e90b";
+}
+
+.icon-exclamation-triangle:before {
+	content: "\e90c";
+}
+
+.icon-exclamation:before {
+	content: "\e90d";
+}
+
+.icon-external-link-alt:before {
+	content: "\e90e";
+}
+
+.icon-file-upload:before {
+	content: "\e90f";
+}
+
+.icon-file:before {
+	content: "\e910";
+}
+
+.icon-folder:before {
+	content: "\e911";
+}
+
+.icon-image:before {
+	content: "\e912";
+}
+
+.icon-link:before {
+	content: "\e913";
+}
+
+.icon-list-alt:before {
+	content: "\e914";
+}
+
+.icon-paint-brush:before {
+	content: "\e915";
+}
+
+.icon-play-circle:before {
+	content: "\e916";
+}
+
+.icon-plus-circle:before {
+	content: "\e917";
+}
+
+.icon-plus:before {
+	content: "\e918";
+}
+
+.icon-question-circle:before {
+	content: "\e919";
+}
+
+.icon-question:before {
+	content: "\e91a";
+}
+
+.icon-save:before {
+	content: "\e91b";
+}
+
+.icon-search-plus:before {
+	content: "\e91c";
+}
+
+.icon-search:before {
+	content: "\e91d";
+}
+
+.icon-tags:before {
+	content: "\e91e";
+}
+
+.icon-thumbtack:before {
+	content: "\e91f";
+}
+
+.icon-trash-alt:before {
+	content: "\e920";
+}
+
+.icon-user-alt:before {
+	content: "\e921";
+}
+
+.icon-users:before {
+	content: "\e922";
+}
+
+.icon-youtube:before {
+	content: "\e923";
+}

@@ -1,0 +1,120 @@
+<form class="modal-form" [formGroup]="createReportForm" (submit)="goToBoard()">
+	<div class="hidden">
+		<input type="hidden" formControlName="folderId">
+		<input type="hidden" formControlName="stateId">
+	</div>
+	<div class="two-columns">
+		<h3 class="title icon icon-list-alt">Sección</h3>
+		<p class="intro">Seleccione la sección para la cual desea hacer su informe</p>
+		<div class="group-radio">
+			<div class="group-radio--option" *ngFor="let section of list.sections; let indice=index">
+				<input type="radio" formControlName="sectionId" [value]="section.id" [id]="section.id" (change)="onUpdateTypes($event, indice)">
+				<label for="{{section.id}}">{{section.name}}
+				<img src="/assets/images/section/{{section.thumbnail}}" alt="">
+				</label>
+			</div>
+		</div>
+
+		<div class="new-section-container">
+			<div class="select-content--medium">
+				<ng-select [items]="list.typeSections" bindValue="key" bindLabel="value"
+					placeholder="Seleccione el tipo de Informe" [virtualScroll]="true"
+					[clearable]="false" class="custom-select custom-select--create-report" (change)="typeChanged($event)"
+					formControlName="typeSelected" required>
+				</ng-select>
+			</div>
+
+			<div class="new-section-block" *ngIf="typeSelected === 'add-new-section'">
+				<div class="select-content--medium">
+					<ng-select [items]="sectionsList" bindValue="id" bindLabel="name"
+						placeholder="Seleccione sección del Informe" [virtualScroll]="true"
+						[clearable]="false" class="custom-select "
+						[(ngModel)]="newSectionSelected" [ngModelOptions]="{standalone: true}">
+					</ng-select>
+				</div>
+				<div class="select-content--medium"
+					*ngIf="newSectionSelected === 'add-new-company-analysis'">
+					<ng-select [items]="list.companies" bindValue="id" bindLabel="name"
+						placeholder="Seleccione Compañia" [virtualScroll]="true"
+						[clearable]="false" class="custom-select "
+						[(ngModel)]="newSectionCompanySelected" [ngModelOptions]="{standalone: true}">
+					</ng-select>
+				</div>
+				<div class="select-content--medium">
+					<div class="input-field">
+						<input id="newSectionName" type="text" placeholder="Escriba el nombre del informe"
+                               (keydown)="createNewSection($event)"
+						        [(ngModel)]="newSectionName" [ngModelOptions]="{standalone: true}">
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<span class="divider"></span>
+
+		<h3 class="title icon icon-user-alt">Autor(es)</h3>
+		<p class="intro">Agregue / edite el autor o colaborador que participará en el informe</p>
+		<div class="authors-box">
+			<ul>
+                <li>
+                    <img *ngIf="!user.photo" src="/assets/images/user/user.png" class="user-img">
+                    <img *ngIf="user.photo" src="{{STORAGE_URL}}{{user.photo}}" class="user-img">
+                    <p class="name">{{user.name}}</p>
+                    <p class="cargue">{{user.charge}}</p>
+                </li>
+				<li *ngFor="let author of list.authors; let indice=index">
+                    <img *ngIf="!author.photo" src="/assets/images/user/user.png" class="user-img">
+                    <img *ngIf="author.photo" src="{{STORAGE_URL}}{{author.photo}}" class="user-img">
+					<p class="name">{{author.name}}</p>
+					<p class="cargue">{{author.charge}}</p>
+					<button class="del icon icon-times" (click)=onDeleteAuthor(indice)></button>
+				</li>
+				<li *ngIf="list.authors.length < 4">
+					<button type="button" class="add icon icon-plus" (click)=onAddAuthor()></button>
+					<p>Agregar<span>Autor / Colaborador</span></p>
+				</li>
+			</ul>
+
+			<div class="select-content--medium" *ngIf="list.authors.length < 4">
+				<ng-select [items]="list.users" bindValue="name" bindLabel="name"
+					placeholder="Escriba o seleccione el autor o colaborar" (change)="onOptionsSelected($event)"
+                           [virtualScroll]="true" dropdownPosition="top"
+					[clearable]="false" class="custom-select custom-select--create-report">
+				</ng-select>
+			</div>
+
+		</div>
+	</div>
+	<div class="two-columns diff-color">
+		<a (click)="onNoClick()" class="modal-close-cta">Cerrar <span class="icon icon-times"></span> </a>
+		<h3 class="title icon icon-user-alt">Plantillas</h3>
+		<p class="intro">Seleccione la plantilla que mejor se acomode a su informe</p>
+		<div class="tabs">
+			<mat-tab-group>
+				<mat-tab label="Nuevas Plantillas">
+					<div class="group-radio-two">
+						<div class="group-radio-two--option" *ngFor="let template of list.templates">
+							<input type="radio" formControlName="templateId" [value]="template.id" [id]="template.id">
+							<label class="" [for]="template.id">
+								<img class="template_img" src="/assets/images/section/{{template.thumbnail}}" alt="">
+								{{template.name}}
+							</label>
+						</div>
+					</div>
+				</mat-tab>
+				<mat-tab label="Mis Plantillas">
+					<div class="group-radio-two">
+						<div class="group-radio-two--option" *ngFor="let report of list.reports">
+							<input type="radio" formControlName="reportId" [value]="report.id" [id]="report.id">
+							<label class="main_template" [for]="report.id">{{report.name}}</label>
+						</div>
+					</div>
+				</mat-tab>
+			</mat-tab-group>
+		</div>
+		<div mat-dialog-actions class="template_btn">
+			<button mat-button (click)="onNoClick()">Cancelar</button>
+			<button type="submit" class="highligh start_btn" mat-button>Empezar Informe <span>&nbsp;</span></button>
+		</div>
+	</div>
+</form>

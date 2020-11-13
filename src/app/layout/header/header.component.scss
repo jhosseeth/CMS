@@ -1,0 +1,114 @@
+@import '../../../assets/sass/_mixins';
+/* .header_content{
+
+} */
+
+:host {
+    background: #ffffff;
+    display: block;
+}
+
+header {
+    width: 100%;
+    height: 70px;
+    margin: auto;
+    display: flex;
+    border-bottom: solid 1px #EDEDED;
+
+    & > .container {
+        width: 88%;
+        height: 100%;
+        max-width: 1440px;
+
+        img.logo-principal {
+            height: 70px;
+            margin-left: -15px;
+        }
+
+        a {
+            height: 70px;
+            color: #616161;
+            margin-left: -10px;
+            display: inline-block;
+            text-decoration: none;
+            border-left: 1px solid #EDEDED;
+            border-right: 1px solid #EDEDED;
+
+            img.logo-board {
+                height: 24px;
+                margin: 23px 8px 0 15px;
+            }
+
+            span {
+                bottom: 5px;
+                position: relative;
+                vertical-align: unset;
+                margin-right: 15px;
+            }
+        }
+
+        .h-btn {
+            float: right;
+            border-left: solid 1px #EDEDED;
+
+            &:hover {
+                cursor: pointer;
+            }
+        }
+
+        & > button {
+            height: 100%;
+            border: none;
+            background: transparent;
+
+            i {
+                margin: 10px 5px 0;
+                font-size: 26px;
+
+                .mat-badge-content {
+                    top: -12px;
+                    right: -10px;
+                    width: 18px;
+                    height: 18px;
+                    font-size: 11px;
+                    line-height: 18px;
+                    font-family: arial;
+                    border: 2px solid white;
+                    background-color: #0080FF;
+                }
+            }
+        }
+
+        .user-menu {
+
+            img {
+                height: 45px;
+                margin: 12.5px 15px;
+                border-radius: 22.5px;
+            }
+
+            span {
+                bottom: 27px;
+                position: relative;
+                margin-right: 15px;
+                color: #616161;
+                font-size: 13px;
+                &:after {
+                    top: 12px;
+                    left: 15px;
+                    content: '';
+                    position: relative;
+                    border-left: 6px solid transparent;
+                    border-right: 6px solid transparent;
+                    border-top: 6px solid #BEC5D0;
+                }
+            }
+        }
+
+        button {
+            .notifications_icon{
+                color: silver;
+            }
+        }
+    }
+}
